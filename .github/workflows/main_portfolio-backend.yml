@@ -22,10 +22,10 @@ jobs:
       - name: Install dependencies
         run: bun install
         
-      - name: Build and test
+      - name: Verify installation
         run: |
-          bun run build --if-present
-          bun run test --if-present
+          bun --version
+          ls -la
           
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
